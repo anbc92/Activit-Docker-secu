@@ -1,0 +1,31 @@
+services:
+
+  quiz-docker:
+    # Construction automatique de l'image a partir du Dockerfile securise
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: quiz-docker:secure
+    container_name: quiz-docker
+
+    # nginx non root ecoute sur 8080 dans le conteneur
+    ports:
+      - "8082:8080"
+
+    # Redemarre automatiquement, sauf si on l'arrete volontairement
+    restart: unless-stopped
+
+    # Securite : utilisateur non root, lecture seule, privileges minimaux
+    user: "101"
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
+    # Limitation des ressources
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 50

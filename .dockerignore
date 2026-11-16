@@ -8,3 +8,4 @@ Dockerfile*
 *.md
 rapport
 *.docx
+docker-compose*

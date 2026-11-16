@@ -21,6 +21,7 @@ Audit et sécurisation de l'image Docker de l'application **Quiz Docker** (Vite 
 | [Mission 2](MISSION2.md) | Dockerfile sécurisé (multi-stage, non root, image slim) |
 | [Mission 3](MISSION3.md) | Comparaison avant / après, publication sur Docker Hub |
 | [Mission 4](MISSION4.md) | Docker Hardened Images : lab et comparaison |
+| [Exercice Compose](EXERCICE-COMPOSE.md) | Déploiement du quiz sécurisé avec Docker Compose |
 
 ## Images publiées
 
